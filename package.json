@@ -17,7 +17,7 @@
     "client",
     "measure"
   ],
-  "author": "fabrizio.invernizzi@telecomitalia.it",
+    "author": "Fabrizio Invernizzi",
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/finvernizzi/mplane_components/issues"
