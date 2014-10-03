@@ -6,7 +6,8 @@ mplane_components
 
 This package contains working examples of three [mPlane](http://www.ict-mplane.eu/) components: a Supervisor, a probe (ping and traceroute) and a simple client for the supervisor. 
 The implementation leverages mPlane nodej library and mPlane HTTPS transport library.
-A complete set of working SSL certificates is provided with the ditribution (with root-CA and signing-CA) in order to have a complete, full working environment. For security reasons you SHOULD update these files with your certificates.
+A complete set of working SSL certificates is provided (with root-CA and signing-CA) in order to have a complete, full working environment. 
+For security reasons you SHOULD update these files with your own certificates.
 
 #Installation
 
@@ -14,13 +15,13 @@ A complete set of working SSL certificates is provided with the ditribution (wit
 
 #Components
 After installation you will find three different components installed:
-    . supervisor
-    . client
-    . pinger
+    - supervisor
+    - client
+    - pinger
     
 ##Supervisor
     
-This is a working example of an mPlane supervisor. Yo change configuration edit the supervisor.json file.
+This is a working example of an mPlane supervisor. In order to change the configuration edit the supervisor.json file.
 This an example of working config
 
 ```json
