@@ -86,7 +86,7 @@ This is a simple probe that exposes two capabilities
 
 Configuration of this probe can be done in pinger.json
  
-```
+```json
 {
     "main":{
         "logFile":"/var/log/mplane/pinger.log",
