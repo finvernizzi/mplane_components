@@ -114,9 +114,9 @@ Configuration of this probe can be done in pinger.json
 The implementation is very simple, and tested only on FreeBSD 9.3, so some changes may be required in order to fully work on other platform.
 In particular two functions should be checked:
 - doAPing. This function executes the ping with parameters received in Specifications. The command is 
-        exec("ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from"
+       ```javascript exec("ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from"```
     
 - doATrace.This function executes the traceroute with parameters received in Specifications. The command is 
-         exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + __MY_IP__ + " " + destination
+        ```javascript exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + __MY_IP__ + " " + destination```
          
          
