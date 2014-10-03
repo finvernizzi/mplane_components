@@ -1,0 +1,21 @@
+{
+    "main":{
+        "logFile":"/var/log/mplane/pinger.log",
+        "retryConnect":5000,
+        "pingerLabel": "pinger_TI_test",
+        "tracerouteLabel": "tracer_TI_test",
+        "ipAdresses" : ["192.168.0.1"],
+        "tracerouteExec": "/usr/sbin/traceroute",
+        "tracerouteOptions": "-q1 -n -w1 -m5"
+    },
+    "supervisor":{
+        "host": "mplane.org",
+        "port": 2427
+    },
+    "ssl":{
+        "key": "/usr/script/DATIProxy/ssl/official/Component1/Component-1-plaintext.key"
+        ,"cert": "/usr/script/DATIProxy/ssl/official/Component1/Component-1.crt.pem"
+        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        ,"requestCert" : true
+    }
+}

@@ -1,0 +1,319 @@
+{
+    "start": {
+        "name": "start",
+        "prim":  "time",
+        "desc": "Beginning of time interval"
+    },
+    "end": {
+        "name": "end",
+        "prim":  "time",
+        "desc": "End of time interval"
+    },
+    "time": {
+        "name": "time",
+        "prim":  "time",
+        "desc": "Single point in time"
+    },
+    "duration": {
+        "name": "duration",
+        "prim":  "natural",
+        "desc": "Time duration (together with start or end)"
+    },
+    "number": {
+        "name": "number",
+        "prim":  "natural",
+        "desc": "Number of times"
+    },
+	"subnet":{
+		"name" : "subnet",
+		"prim":  "ip",
+		"desc": "pippo",
+		"ip4":{
+			"name" : "ip4",
+			"prim":  "ip",
+			"desc": "pippo"
+		},
+		"netmask":{
+			"name" : "netmask",
+			"prim":  "string",
+			"desc": "pippo"
+		}
+	},
+	"aggregate":{
+		"name" : "aggregate",
+		"prim":  "ip",
+		"desc": "pippo",
+		"ip4":{
+			"name" : "ip4",
+			"prim":  "ip",
+			"desc": "pippo"
+		}
+	},
+    "source": {
+        "name": "source",
+        "prim":  "IP",
+        "desc": "Source or initiator of network traffic; active meter",
+        "ip":{
+            "name": "IPv4 source address",
+            "prim":  "IP",
+            "desc": "Source or initiator of network traffic; active meter IPv4"
+        },
+	 "ip4":{
+     		"name": "IPv4 source address",
+     		"prim":  "IP",
+     		"desc": "Source or initiator of network traffic; active meter IPv4"
+ 	},
+        "ip6":{
+            "name": "IPv6 source address",
+            "prim":  "ip6",
+            "desc": "Source or initiator of network traffic; active meter IPv6"
+        }
+    }
+    ,"destination": {
+        "name": "destination",
+        "prim":  "IP",
+        "desc": "Destination or responder of network traffic; active reflector"
+        ,"ip4":{
+            "name": "IPv4 destination address",
+            "prim":  "IP",
+            "desc": "Destination or responder of network traffic; active reflector IPv4"
+        }
+        ,"ip4":{
+            "name": "IPv4 destination address",
+            "prim":  "IP",
+            "desc": "Destination or responder of network traffic; active reflector IPv4"
+        }
+        ,"ip6":{
+            "name": "IPv6 destination address",
+            "prim":  "ip6",
+            "desc": "Destination or responder of network traffic; active reflector IPv6"
+        }
+    }
+    ,"observer": {
+        "name": "observer",
+        "prim":  "string",
+        "desc": "Passive observation point"
+        ,"ip":{
+            "name": "IPv4 Passive observation point",
+            "prim":  "ip",
+            "desc": "Passive observation point IPv4"
+        }
+        ,"ip6":{
+            "name": "IPv6 Passive observation point",
+            "prim":  "ip6",
+            "desc": "Passive observation point IPv6"
+        }
+    }
+    ,"intermediate": {
+            "name": "intermediate",
+            "prim":  "string",
+            "desc": "Intermediate system identifier (a point along a path)",
+            "ip":{
+                "name": "IPv4 intermediate",
+                "prim":  "ip",
+                "desc": "Intermediate system identifier (a point along a path) IPv4"
+            },
+            "ip6":{
+                "name": "IPv6 intermediate",
+                "prim":  "ip6",
+                "desc": "Intermediate system identifier (a point along a path) IPv6"
+            }
+    }
+    ,"octets": {
+        "name": "octets",
+        "prim":  "natural",
+        "desc": "Count of sent/received/observed octets"
+         ,"ip": {
+            "name": "ip",
+            "prim":  "natural",
+            "desc": "octets: including IP header"
+        }
+        ,"udp": {
+            "name": "udp",
+            "prim":  "natural",
+            "desc": "octets: including udp header"
+        }
+        ,"tcp": {
+            "name": "tcp",
+            "prim":  "natural",
+            "desc": "octets: including tcp header"
+        }
+        ,"transport": {
+            "name": "transport",
+            "prim":  "natural",
+            "desc": "octets: including transport header"
+        }
+        ,"layer7": {
+            "name": "layer7",
+            "prim":  "natural",
+            "desc": "octets: delivered to application (i.e., without retransport);"
+        }
+        ,"lost": {
+            "name": "lost",
+            "prim":  "natural",
+            "desc": "Count of lost octets"
+        }
+        ,"duplicate": {
+            "name": "duplicate",
+            "prim":  "natural",
+            "desc": "Count of octets observed multiple times"
+        }
+        ,"outoforder": {
+            "name": "outoforder",
+            "prim":  "natural",
+            "desc": "Count of octets observed outside expected order"
+        }
+    }
+,"packets": {
+        "name": "packets",
+        "prim":  "natural",
+        "desc": "Count of sent/received/observed packets"
+         ,"ip": {
+            "name": "ip",
+            "prim":  "natural",
+            "desc": "packets: including IP header"
+        }
+        ,"udp": {
+            "name": "udp",
+            "prim":  "natural",
+            "desc": "packets: including udp header"
+        }
+        ,"tcp": {
+            "name": "tcp",
+            "prim":  "natural",
+            "desc": "octets: including tcp header"
+        }
+        ,"transport": {
+            "name": "transport",
+            "prim":  "natural",
+            "desc": "packets: including transport header"
+        }
+        ,"layer7": {
+            "name": "layer7",
+            "prim":  "natural",
+            "desc": "packets: delivered to application (i.e., without retransport);"
+        }
+        ,"lost": {
+            "name": "lost",
+            "prim":  "natural",
+            "desc": "Count of lost packets"
+        }
+        ,"duplicate": {
+            "name": "duplicate",
+            "prim":  "natural",
+            "desc": "Count of octets observed multiple times"
+        }
+        ,"outoforder": {
+            "name": "outoforder",
+            "prim":  "natural",
+            "desc": "Count of packets observed outside expected order"
+        }
+    }
+    ,"delay": {
+        "name": "delay",
+        "prim":  "real",
+        "desc": "Delay along a path"
+        ,"oneway": {
+            "name": "oneway",
+            "prim":  "real",
+            "desc": "Delay or connectivity from source to destination"
+        }
+        ,"twoway": {
+            "name": "twoway",
+            "prim":  "real",
+            "desc": "Delay or connectivity from source to destination to source"
+        }
+        ,"ip": {
+            "name": "ip",
+            "prim":  "real",
+            "desc": "Connectivity at IP layer"
+        }
+		,"tcp": {
+            "name": "ip",
+            "prim":  "real",
+            "desc": "Connectivity delay at TCP layer"
+                ,"oneway": {
+                    "name": "oneway",
+                    "prim":  "real",
+                    "desc": "Delay or connectivity from source to destination"
+                }
+                ,"twoway": {
+                "min": {
+                    "name": "min",
+                    "prim": "real",
+                    "desc": "Minimum observed delay in TCP connectivity from source to destination and back"
+                },
+                "max": {
+                    "name": "max",
+                    "prim": "real",
+                    "desc": "Maximum observed delay in TCP connectivity from source to destination and back"
+                },
+                "mean": {
+                    "name": "mean",
+                    "prim": "real",
+                    "desc": "Mean observed delay in TCP connectivity from source to destination and back"
+                }
+            }
+        }
+        ,"asn": {
+            "name": "asn",
+            "prim":  "real",
+            "desc": "Connectivity at BGP level"
+        }
+    }
+    ,"hops": {
+            "name": "hops",
+            "prim":  "natural",
+            "desc": "Hop count along a path"
+            ,"oneway": {
+                "name": "oneway",
+                "prim":  "natural",
+                "desc": "Delay or connectivity from source to destination"
+            }
+            ,"twoway": {
+                "name": "twoway",
+                "prim":  "natural",
+                "desc": "Delay or connectivity from source to destination to source"
+            }
+            ,"ip": {
+                "name": "ip",
+                "prim":  "natural",
+                "desc": "Hop count in nodes"
+            }
+            ,"asn": {
+                "name": "asn",
+                "prim":  "natural",
+                "desc": "Hop count in autonomous systems"
+            }
+        }
+    ,"rtt": {
+        "name": "rtt",
+        "prim":  "time",
+        "desc": "Round-trip time"
+    }
+    ,"iat": {
+        "name": "iat",
+        "prim":  "time",
+        "desc": "Interarrival time"
+    }
+    ,"bandwidth": {
+        "name": "Bandwidth ",
+        "prim":  "real",
+        "desc": "Bandwidth"
+        ,"nominal": {
+            "name": "nominal ",
+            "prim":  "real",
+            "desc": "Declared nominal bandwidth for a link"
+        }
+        ,"partial": {
+            "name": "partial ",
+            "prim":  "real",
+            "desc": "Bandwidth attributable to a traffic flow"
+        }
+         ,"imputed": {
+            "name": "imputed ",
+            "prim":  "real",
+            "desc": "Measured (imputed) bandwidth for a path (definition depends on metadata: algorithm)"
+        }
+    }
+}

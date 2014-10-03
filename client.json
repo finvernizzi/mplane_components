@@ -1,0 +1,23 @@
+{
+    "main":{
+        "logFile":"/var/log/mplane/client.log",
+        "version":"1.0",
+        "description": "mPlane supervisor client",
+        "prompt_separator":"#",
+        "minimum_columns_required":150,
+        "process_name": "mPlane supervisor CLIENT"
+    },
+    "supervisor":{
+        "listenPort":2427,
+        "hostName":"mplane.org"
+    },
+    "registry":{
+        "file":"/usr/script/DATIProxy/registry.json"
+    },
+    "ssl":{
+        "key": "/usr/script/DATIProxy/ssl/official/Client1/Client-1-plaintext.key.pem"
+        ,"cert": "/usr/script/DATIProxy/ssl/official/Client1/Client-1.crt.pem"
+        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        ,"requestCert" : true
+    }
+}
