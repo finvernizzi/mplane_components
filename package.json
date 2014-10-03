@@ -1,6 +1,6 @@
 {
   "name": "mplane_components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "mPlane base components.",
   "main": "supervisor.js",
   "scripts": {
