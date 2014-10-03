@@ -8,12 +8,12 @@
 
 var exec = require('child_process').exec,
     mplane = require('mplane')
-    ,supervisor = require("./mplane_http_transport"
+    ,supervisor = require("mplane_http_transport")
     , _ = require("lodash"),
     inquirer = require("inquirer"),
     url = require('url'),
     async = require("async")
-    ,fs = require('fs'));
+    ,fs = require('fs');
 
 var CONFIGFILE = "pinger.json"; //TODO:This should be overwrittable by cli
 
