@@ -15,7 +15,7 @@ var http = require("http")
     ,fs = require("fs")
     ,inquirer =require("inquirer")
     ,async = require("async")
-    ,supervisor = require("./mplane_http_transport");
+    ,supervisor = require("mplane_http_transport");
 
 var CONFIGFILE = "client.json";
 //-----------------------------------------------------------------------------------------------------------
