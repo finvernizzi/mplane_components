@@ -10,10 +10,11 @@ A complete set of working SSL certificates is provided (with root-CA and signing
 For security reasons you SHOULD update these files with your own certificates.
 
 #Installation
+Get all the code from github
 
 ```git clone https://github.com/finvernizzi/mplane_components.git```
 
-This command will install all the components in the mplane_components folder.
+This command will install all the components and needed stuff in the mplane_components folder.
 
 ```
 mPlaneTEST# ls ./mplane_components/
@@ -27,7 +28,7 @@ Now you need to install all the nodejs dependencies
 cd ./mplane_components
 npm install
 ```
-
+Done. You are ready to run the three components.
 
 #Components
 After installation you will find three different components installed in your npm root directory:
@@ -135,4 +136,7 @@ In particular two functions should be checked:
 - doATrace.This function executes the traceroute with parameters received in Specifications. The command is 
         ```javascript exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + __MY_IP__ + " " + destination```
          
-         
+To run the probe:
+```
+node ./pinger
+```
