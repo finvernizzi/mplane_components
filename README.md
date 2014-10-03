@@ -11,23 +11,23 @@ For security reasons you SHOULD update these files with your own certificates.
 
 #Installation
 
-`npm install mplane_components -g`
+```git clone https://github.com/finvernizzi/mplane_components.git```
 
-This command will install all the components and other stuff in the 'global' npm folder.
-To see where they are, use the command
-
-```npm root``
-
-On out test system, for example, npm root is ```/usr/script/node_modules``` , so we will find a directory  ```mplane_components``` there, as in following shell output.
+This command will install all the components in the mplane_components folder.
 
 ```
-mPlaneTEST# npm root
-/usr/script/node_modules
-mPlaneTEST# ls /usr/script/node_modules/mplane_components/
+mPlaneTEST# ls ./mplane_components/
 README.md       node_modules    pinger.json     ssl_files.js
 client.js       package.json    registry.json   supervisor.js
 client.json     pinger.js       ssl             supervisor.json
 ```
+
+Now you need to install all the nodejs dependencies
+```
+cd ./mplane_components
+npm install
+```
+
 
 #Components
 After installation you will find three different components installed in your npm root directory:

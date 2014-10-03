@@ -12,6 +12,12 @@
         "host": "mplane.org",
         "port": 2427
     },
+    "pinger":{
+        "constraints":"192.168.0.1 ... 192.168.255.255"
+    },
+    "traceroute":{
+        "constraints":"192.168.0.1 ... 192.168.255.255"
+    },
     "ssl":{
         "key": "/usr/script/DATIProxy/ssl/official/Component1/Component-1-plaintext.key"
         ,"cert": "/usr/script/DATIProxy/ssl/official/Component1/Component-1.crt.pem"

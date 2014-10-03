@@ -54,7 +54,7 @@ prompt = inquirer.prompt( questions, function( answers ) {
     pingerCapability.set_when("now ... future / 1s");
     pingerCapability.add_parameter({
         type:"destination.ip4",
-        constraints:"192.168.0.1 ... 192.168.255.255"
+        constraints:configuration.pinger.constraints
     }).add_parameter({
         type:"number",
         constraints:"1 ... 10"
@@ -71,7 +71,7 @@ prompt = inquirer.prompt( questions, function( answers ) {
     traceCapability.set_when("now ... future / 1s");
     traceCapability.add_parameter({
         type:"destination.ip4",
-        constraints:"192.168.0.1 ... 192.168.255.255"
+        constraints:configuration.traceroute.constraints
     }).add_parameter({
         type:"source.ip4",
         constraints:__MY_IP__
