@@ -6,7 +6,6 @@
  */
 
 var http = require("http")
-    //,Ascii = require('ascii')
     ,cli = require('cli').enable('status','catchall','version','help')
     ,StateMachine = require("javascript-state-machine")
     ,_ = require('lodash')
@@ -645,26 +644,29 @@ function showReceipts(){
     return true;
 }
 
-
 function motd(callback){
-   console.log('');
-   console.log('MPLANE');
-   console.log('');
-    //var pic = new Ascii('./images/mplane_final_short_256x.png');
-    // output in terminal (terminal mode)
-   /* pic.convert(function(err, result) {
         console.log();
-        console.log(result);
         console.log();
-        console.log("                   MPLANE ");
+        console.log("    ###########################################");
+        console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$   ;$$$$   $$$$$$       $$$$$##");
+        console.log("    ##$$$$$$$$   $$$$$$$$  $$$$   $$$$$  $$$$##");
+        console.log("    ##$$$$$$   $$$$$$$$$$!      $$$$$$$   $$$##");
+        console.log("    ##$$$$   $$$$$$$$$$$$$$  $$$$$$$$$$$  $$$##");
+        console.log("    ##$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$  $$$##");
+        console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ###########################################");
+
         console.log();
-        console.log("An Intelligent Measurement Plane for Future \n     Network and Application Management");
+        console.log("               mPlane supervisor DEMO");
         console.log();
-        console.log(cli.app + " (" +cli.version + ")");
+        console.log("    An Intelligent Measurement Plane for Future \n         Network and Application Management");
         console.log();
         console.log();
         callback();
-    });*/
 }
 
 /**
