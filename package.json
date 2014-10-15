@@ -37,7 +37,6 @@
         "sha-1": ">=0.0.0",
         "javascript-state-machine": ">=2.3.0",
         "cli-table": ">=0.3.0",
-        "ascii": ">=0.1.0"
   },
   "homepage": "https://github.com/finvernizzi/mplane_components"
 }

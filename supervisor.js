@@ -22,8 +22,8 @@ var mplane = require('mplane'),
     http = require('http')
     supervisor = require("mplane_http_transport"),
     fs = require('fs'),
-    ssl_files = require("./ssl_files")
-    ,Ascii = require('ascii');
+    ssl_files = require("./ssl_files");
+    //,Ascii = require('ascii');
 
 
 var CONFIGFILE = "supervisor.json"; //TODO:This should be overwrittable by cli
@@ -747,6 +747,7 @@ function DN(req){
 }
 
 function motd(callback){
+    console.log("MPLANE");
     var pic = new Ascii('./images/mplane_final_short_256x.png');
     // output in terminal (terminal mode)
     pic.convert(function(err, result) {
