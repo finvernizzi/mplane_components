@@ -6,7 +6,7 @@
  */
 
 var http = require("http")
-    ,Ascii = require('ascii')
+    //,Ascii = require('ascii')
     ,cli = require('cli').enable('status','catchall','version','help')
     ,StateMachine = require("javascript-state-machine")
     ,_ = require('lodash')
@@ -647,10 +647,12 @@ function showReceipts(){
 
 
 function motd(callback){
-   //console.log('\033[2J');
-    var pic = new Ascii('./images/mplane_final_short_256x.png');
+   console.log('');
+   console.log('MPLANE');
+   console.log('');
+    //var pic = new Ascii('./images/mplane_final_short_256x.png');
     // output in terminal (terminal mode)
-    pic.convert(function(err, result) {
+   /* pic.convert(function(err, result) {
         console.log();
         console.log(result);
         console.log();
@@ -662,7 +664,7 @@ function motd(callback){
         console.log();
         console.log();
         callback();
-    });
+    });*/
 }
 
 /**
