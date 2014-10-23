@@ -5,9 +5,9 @@
         "hostName":"mplane.org"
     },
     "ssl":{
-        "key": "/usr/script/DATIProxy/ssl/official/Supervisor2/Supervisor-2-plaintext.key.pem"
-        ,"cert": "/usr/script/DATIProxy/ssl/official/Supervisor2/Supervisor-2.crt.pem"
-        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        "key": "./ssl/official/Supervisor2/Supervisor-2-plaintext.key.pem"
+        ,"cert": "./ssl/official/Supervisor2/Supervisor-2.crt.pem"
+        ,"ca": [ "./ssl/official/root-ca.pem" , "./ssl/official/signing-ca.pem" ]
         ,"requestCert" : true
     }
 }
