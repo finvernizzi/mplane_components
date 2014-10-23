@@ -742,7 +742,9 @@ function DN(req){
     var details = req.connection.getPeerCertificate() || null;
     if (!details)
         return null;
-    return (details.subject.C+"."+details.subject.ST+"."+details.subject.O+"."+details.subject.CN)
+   // Extract the DNS altName
+   var altName = details.subjectaltname.split(":"); 
+   return(altName[1])
 }
 
 function motd(callback){
