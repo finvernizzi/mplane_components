@@ -299,7 +299,6 @@ app.post(supervisor.SUPERVISOR_PATH_REGISTER_RESULT, function(req, res){
 /**
  * Someone is asking for results WITH THE RI sequesce (reddem)
  */
-//app.post('/show/result', function(req, res){
 app.post(supervisor.SUPERVISOR_PATH_SHOW_RESULT, function(req, res){
     var redeem = mplane.from_dict(req.body);
     if (!__sent_receipts__[redeem.get_token()]){
@@ -315,8 +314,10 @@ app.post(supervisor.SUPERVISOR_PATH_SHOW_RESULT, function(req, res){
         return;
     }
     // If a result exists, send it or a receipt, else send the receipt
+    // Delete the result from available ones
     if (__results__[dn][label][specHash]){
         res.send(new mplane.Result(__results__[dn][label][specHash]).to_dict());
+        delete __results__[dn][label][specHash];
     }else{
         res.send(new mplane.Receipt(__required_specifications__[dn][label][specHash]).to_dict());
     }
