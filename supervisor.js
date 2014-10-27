@@ -22,8 +22,7 @@ var mplane = require('mplane'),
     http = require('http')
     supervisor = require("mplane_http_transport"),
     fs = require('fs'),
-    ssl_files = require("./ssl_files")
-    ,Ascii = require('ascii');
+    ssl_files = require("./ssl_files");
 
 
 var CONFIGFILE = "supervisor.json"; //TODO:This should be overwrittable by cli
@@ -743,21 +742,32 @@ function DN(req){
     var details = req.connection.getPeerCertificate() || null;
     if (!details)
         return null;
-    return (details.subject.C+"."+details.subject.ST+"."+details.subject.O+"."+details.subject.CN)
+   // Extract the DNS altName
+   var altName = details.subjectaltname.split(":"); 
+   return(altName[1])
 }
 
 function motd(callback){
-    var pic = new Ascii('./images/mplane_final_short_256x.png');
-    // output in terminal (terminal mode)
-    pic.convert(function(err, result) {
         console.log();
-        console.log(result);
+        console.log();
+	console.log("    ###########################################");
+	console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+	console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+	console.log("    ##$$$$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$##");
+	console.log("    ##$$$$$$$$$$   ;$$$$   $$$$$$       $$$$$##");
+	console.log("    ##$$$$$$$$   $$$$$$$$  $$$$   $$$$$  $$$$##");
+	console.log("    ##$$$$$$   $$$$$$$$$$!      $$$$$$$   $$$##");
+	console.log("    ##$$$$   $$$$$$$$$$$$$$  $$$$$$$$$$$  $$$##");
+	console.log("    ##$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$  $$$##");
+	console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+	console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+	console.log("    ###########################################");
+
         console.log();
         console.log("               mPlane supervisor DEMO");
         console.log();
-        console.log("An Intelligent Measurement Plane for Future \n     Network and Application Management");
+        console.log("    An Intelligent Measurement Plane for Future \n         Network and Application Management");
         console.log();
         console.log();
         callback();
-    });
 }

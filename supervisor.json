@@ -2,12 +2,12 @@
     "main":{
         "logFile":"/var/log/mplane/supervisor.log",
         "listenPort":2427,
-        "hostName":"mplane.org"
+        "hostName":"Supervisor-1.TI.mplane.org."
     },
     "ssl":{
-        "key": "/usr/script/DATIProxy/ssl/official/Supervisor2/Supervisor-2-plaintext.key.pem"
-        ,"cert": "/usr/script/DATIProxy/ssl/official/Supervisor2/Supervisor-2.crt.pem"
-        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        "key": "/usr/script/ca/certs/Supervisor-TI-plaintext.key"
+        ,"cert": "/usr/script/ca/certs/Supervisor-TI.crt"
+        ,"ca": [ "/usr/script/ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     }
 }

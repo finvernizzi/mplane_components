@@ -124,7 +124,6 @@ function pushCapPullSpec(capabilities){
                     ,function(specification){
                         var label = specification.get_label();
                         console.log("------------------------------------------");
-                        console.log("So i should work...")
                         // FIXME: this MUST be changed!!!
                         specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
                         if (label ==  configuration.main.pingerLabel){
@@ -166,6 +165,7 @@ function mean(values){
  */
 function execPing(specification){
     var dest = specification.get_parameter_value("destination.ip4");
+    console.log("... Ping to " +dest);
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
@@ -201,6 +201,7 @@ function execPing(specification){
  */
 function execTraceroute(specification){
     var dest = specification.get_parameter_value("destination.ip4");
+   console.log("... Traceroute to " +dest);
     async.waterfall([
         function(callback){
             console.log("Tracing to "+dest);

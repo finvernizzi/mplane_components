@@ -6,7 +6,6 @@
  */
 
 var http = require("http")
-    ,Ascii = require('ascii')
     ,cli = require('cli').enable('status','catchall','version','help')
     ,StateMachine = require("javascript-state-machine")
     ,_ = require('lodash')
@@ -89,8 +88,8 @@ var fsm = StateMachine.create({
 
 // CLI params
 cli.parse({
-    supervisorHost:  ['b', 'Supervisor address', 'ip', 'mplane.org'],
-    supervisorPort:  ['p', 'Supervisor port', 'int', '2427'],
+    supervisorHost:  ['b', 'Supervisor address', 'ip', configuration.supervisor.hostName],
+    supervisorPort:  ['p', 'Supervisor port', 'int', configuration.supervisor.listenPort],
     SSL:['s', 'Use SSL in supervisor connections', 'bool', true],
     ca:['c' , 'Certificate file of the Certification Auth' , 'string' , configuration.ssl.ca],
     key:['k' , 'Key file of the client' , 'string' , configuration.ssl.key],
@@ -380,7 +379,7 @@ function manageShowState(event, from, to, input){
  * Requests all the capabilities registered on the supervisor and shows them in a table
  * @param callback the function to call on completion
  */
-function showSupervisorCapabilityes(callback){
+function showSupervisorCapabilityes(callback){	
     supervisor.showCapabilities({
         caFile : cli.options.ca,
         keyFile : cli.options.key,
@@ -645,24 +644,29 @@ function showReceipts(){
     return true;
 }
 
-
 function motd(callback){
-   //console.log('\033[2J');
-    var pic = new Ascii('./images/mplane_final_short_256x.png');
-    // output in terminal (terminal mode)
-    pic.convert(function(err, result) {
         console.log();
-        console.log(result);
         console.log();
-        console.log("                   MPLANE ");
+        console.log("    ###########################################");
+        console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ##$$$$$$$$$$   ;$$$$   $$$$$$       $$$$$##");
+        console.log("    ##$$$$$$$$   $$$$$$$$  $$$$   $$$$$  $$$$##");
+        console.log("    ##$$$$$$   $$$$$$$$$$!      $$$$$$$   $$$##");
+        console.log("    ##$$$$   $$$$$$$$$$$$$$  $$$$$$$$$$$  $$$##");
+        console.log("    ##$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$  $$$##");
+        console.log("    ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ###$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$##");
+        console.log("    ###########################################");
+
         console.log();
-        console.log("An Intelligent Measurement Plane for Future \n     Network and Application Management");
+        console.log("               mPlane supervisor DEMO");
         console.log();
-        console.log(cli.app + " (" +cli.version + ")");
+        console.log("    An Intelligent Measurement Plane for Future \n         Network and Application Management");
         console.log();
         console.log();
         callback();
-    });
 }
 
 /**
