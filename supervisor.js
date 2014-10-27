@@ -228,6 +228,8 @@ app.get(supervisor.SUPERVISOR_PATH_SHOW_SPECIFICATION, function(req, res){
                 DNs.push(curDN);
             })
         }
+        console.log(DNs);
+        console.log(__required_specifications__)
         DNs.forEach(function(d,index){
             _.each(_.keys(__required_specifications__[d]) , function(label){
                 _.each(_.keys(__required_specifications__[d][label]) , function(specHash){
@@ -312,7 +314,7 @@ app.post(supervisor.SUPERVISOR_PATH_SHOW_RESULT, function(req, res){
         res.status(403).send("Unexpected redemption");
         return;
     }
-    // If a result exists, send it or a receipt, else send the receipt
+    // If a result exists, send it else send the receipt
     // Delete the result from available ones
     if (__results__[dn][label][specHash]){
         res.send(new mplane.Result(__results__[dn][label][specHash]).to_dict());
@@ -630,7 +632,7 @@ function showSpecifications(capabilityHash , DN){
     // Are we asking for a specific capability or for all capabilities?
     if (!_.isUndefined(capabilityHash)){
         _.forEach(__registered_capabilities__[DN] , function(DN) {
-            showSpecificationForCapability(hash , DN);
+            showSpecificationForCapability(capabilityHash , DN);
         });
     }
     else{

@@ -122,16 +122,16 @@ function pushCapPullSpec(capabilities){
                         ,certFile: configuration.ssl.cert
                         ,period: configuration.main.ceckSpecificationPeriod
                     }
-                    ,function(specification){
+                    ,function(specification , callback){
                         var label = specification.get_label();
                         console.log("------------------------------------------");
                         // FIXME: this MUST be changed!!!
                         specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
                         if (label ==  configuration.main.pingerLabel){
-                            execPing( specification );
+                            execPing( specification , callback);
                         }
                         if (label ==  configuration.main.tracerouteLabel){
-                            execTraceroute(specification);
+                            execTraceroute(specification, callback);
                         }
                     }, function(err){
                         // For some reason we have no capability registered
@@ -164,7 +164,7 @@ function mean(values){
  *
  * @param specification The mplane Specification
  */
-function execPing(specification){
+function execPing(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
     console.log("... Ping to " +dest);
     var reqNum = specification.get_parameter_value("number");
@@ -191,6 +191,7 @@ function execPing(specification){
                 else{
                     console.log("------------------------------------------");
                 }
+                mainCallback()
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -200,7 +201,7 @@ function execPing(specification){
  *
  * @param specification The mplane Specification
  */
-function execTraceroute(specification){
+function execTraceroute(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
    console.log("... Traceroute to " +dest);
     async.waterfall([
@@ -237,6 +238,7 @@ function execTraceroute(specification){
                     else{
                         console.log("------------------------------------------");
                     }
+                    mainCallback();
                 }
             ); //supervisor.registerResult
         }
