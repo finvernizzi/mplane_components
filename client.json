@@ -12,7 +12,7 @@
         "hostName":"Supervisor-1.TI.mplane.org"
     },
     "registry":{
-        "file":"/usr/script/DATIProxy/registry.json"
+        "file":"./registry.json"
     },
     "ssl":{
         "key": "/usr/script/ca/certs/Client-TI-plaintext.key"
