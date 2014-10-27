@@ -4,24 +4,24 @@
         "retryConnect":5000,
         "pingerLabel": "pinger_TI_test",
         "tracerouteLabel": "tracer_TI_test",
-        "ipAdresses" : ["192.168.0.1"],
+        "ipAdresses" : ["192.168.123.1"],
         "tracerouteExec": "/usr/sbin/traceroute",
         "tracerouteOptions": "-q1 -n -w1 -m5"
     },
     "supervisor":{
-        "host": "mplane.org",
+        "host": "Supervisor-1.TI.mplane.org",
         "port": 2427
     },
     "pinger":{
-        "constraints":"192.168.0.1 ... 192.168.255.255"
+        "constraints":"0.0.0.1 ... 255.255.255.255"
     },
     "traceroute":{
-        "constraints":"192.168.0.1 ... 192.168.255.255"
+        "constraints":"0.0.0.1 ... 255.255.255.255"
     },
     "ssl":{
-        "key": "/usr/script/DATIProxy/ssl/official/Component1/Component-1-plaintext.key"
-        ,"cert": "/usr/script/DATIProxy/ssl/official/Component1/Component-1.crt.pem"
-        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        "key": "/usr/script/ca/certs/Component-TI-plaintext.key"
+        ,"cert": "/usr/script/ca/certs/Component-TI.crt"
+        ,"ca": [ "/usr/script/ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     }
 }
