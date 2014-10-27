@@ -2,7 +2,8 @@
     "main":{
         "logFile":"/var/log/mplane/supervisor.log",
         "listenPort":2427,
-        "hostName":"Supervisor-1.TI.mplane.org."
+        "hostName":"Supervisor-1.TI.mplane.org.",
+        "cli":true
     },
     "ssl":{
         "key": "/usr/script/ca/certs/Supervisor-TI-plaintext.key"

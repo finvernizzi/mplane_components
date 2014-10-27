@@ -95,7 +95,6 @@ var __registered_DN__= [];
 
 /***************************/
 
-
 // Load the reference registry
 mplane.Element.initialize_registry("registry.json");
 
@@ -372,6 +371,8 @@ function registerCapability(capability , DN){
 // Start the prompt
 // ---------------------------------------------------------------
 motd(function(){console.log("Supervisor listening on "+configuration.main.hostName+"@"+configuration.main.listenPort);});
+if (configuration.main.cli)
+    cli();
 
 var prompt;
 
