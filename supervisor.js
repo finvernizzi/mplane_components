@@ -225,10 +225,10 @@ app.get(supervisor.SUPERVISOR_PATH_SHOW_SPECIFICATION, function(req, res){
         if (__registered_DN__.indexOf(dn) != -1){
             DNs.push(dn);
         }else{
-            statusCode = 428;
-            //_.each(_.keys(__required_specifications__), function(curDN){
-            //    DNs.push(curDN);
-            //})
+            //statusCode = 428;
+            _.each(_.keys(__required_specifications__), function(curDN){
+                DNs.push(curDN);
+            })
         }
         DNs.forEach(function(d,index){
             _.each(_.keys(__required_specifications__[d]) , function(label){
