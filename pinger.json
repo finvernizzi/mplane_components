@@ -2,7 +2,7 @@
     "main":{
         "logFile":"/var/log/mplane/pinger.log",
         "retryConnect":5000,
-        "ceckSpecificationPeriod":5000
+        "ceckSpecificationPeriod":5000,
         "pingerLabel": "pinger_TI_test",
         "tracerouteLabel": "tracer_TI_test",
         "ipAdresses" : ["192.168.123.1"],
