@@ -15,9 +15,9 @@
         "file":"/usr/script/DATIProxy/registry.json"
     },
     "ssl":{
-        "key": "/usr/script/DATIProxy/ssl/official/Client1/Client-1-plaintext.key.pem"
-        ,"cert": "/usr/script/DATIProxy/ssl/official/Client1/Client-1.crt.pem"
-        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+        "key": "/usr/script/ca/certs/Client-TI-plaintext.key"
+        ,"cert": "/usr/script/ca/certs/Client-TI.crt"
+        ,"ca": [ "/usr/script/ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     }
 }
