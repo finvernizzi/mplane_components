@@ -120,6 +120,7 @@ function pushCapPullSpec(capabilities){
                         ,caFile: configuration.ssl.ca
                         ,keyFile: configuration.ssl.key
                         ,certFile: configuration.ssl.cert
+                        ,period: configuration.main.ceckSpecificationPeriod
                     }
                     ,function(specification){
                         var label = specification.get_label();
