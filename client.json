@@ -9,7 +9,7 @@
     },
     "supervisor":{
         "listenPort":2427,
-        "hostName":"mplane.org"
+        "hostName":"Supervisor-1.TI.mplane.org"
     },
     "registry":{
         "file":"/usr/script/DATIProxy/registry.json"
