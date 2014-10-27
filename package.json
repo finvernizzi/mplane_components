@@ -17,26 +17,27 @@
     "client",
     "measure"
   ],
-    "author": "Fabrizio Invernizzi",
+  "author": "Fabrizio Invernizzi",
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/finvernizzi/mplane_components/issues"
   },
-"dependencies": {
-        "mplane": ">0.5.0",
-        "mplane_http_transport": ">0.0.0",
-        "lodash": ">2.4.0",
-        "inquirer": ">=0.8.0",
-        "url": ">0.10.0",
-        "async": ">=0.9.0",
-        "fs": ">0.0.0",
-        "express": ">=4.9.5",
-        "morgan": ">=1.3.0",
-        "prettyjson": ">=0.0.0",
-        "body-parser": ">=1.0.0",
-        "sha-1": ">=0.0.0",
-        "javascript-state-machine": ">=2.3.0",
-        "cli-table": ">=0.3.0"
+  "dependencies": {
+    "mplane": ">0.5.0",
+    "mplane_http_transport": ">0.0.0",
+    "lodash": ">2.4.0",
+    "inquirer": ">=0.8.0",
+    "url": ">0.10.0",
+    "async": ">=0.9.0",
+    "fs": ">0.0.0",
+    "express": ">=4.9.5",
+    "morgan": ">=1.3.0",
+    "prettyjson": ">=0.0.0",
+    "body-parser": ">=1.0.0",
+    "sha-1": ">=0.0.0",
+    "javascript-state-machine": ">=2.3.0",
+    "cli-table": ">=0.3.0",
+    "cli": "^0.6.5"
   },
   "homepage": "https://github.com/finvernizzi/mplane_components"
 }
