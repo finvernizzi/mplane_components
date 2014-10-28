@@ -170,7 +170,7 @@ function execPing(specification, mainCallback){
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
-            doAPing(dest, 4 , reqNum , callback);
+            doAPing(dest, 10000 , reqNum , callback);
         }
     ], function (err, meanRTT) {
         console.log("CALCULATED:"+meanRTT);
