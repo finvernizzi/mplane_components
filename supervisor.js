@@ -228,8 +228,6 @@ app.get(supervisor.SUPERVISOR_PATH_SHOW_SPECIFICATION, function(req, res){
                 DNs.push(curDN);
             })
         }
-        console.log(DNs);
-        console.log(__required_specifications__)
         DNs.forEach(function(d,index){
             _.each(_.keys(__required_specifications__[d]) , function(label){
                 _.each(_.keys(__required_specifications__[d][label]) , function(specHash){
