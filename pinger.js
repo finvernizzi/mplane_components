@@ -10,10 +10,10 @@ var exec = require('child_process').exec,
     mplane = require('mplane')
     ,supervisor = require("mplane_http_transport")
     , _ = require("lodash"),
-    inquirer = require("inquirer"),
     url = require('url'),
     async = require("async")
-    ,fs = require('fs');
+    ,fs = require('fs')
+    ,cli = require("cli");
 
 var CONFIGFILE = "pinger.json"; //TODO:This should be overwrittable by cli
 
@@ -30,74 +30,70 @@ catch (err) {
 }
 //-----------------------------------------------------------------------------------------------------------
 
-var __MY_IP__ = configuration.main.ipAdresses[0];
-
-var questions = [
-    {
-        type: "list",
-        name: "ipSource",
-        message: "Select your source IP address",
-        choices: configuration.main.ipAdresses,
-        filter: function( val ) { return val.toLowerCase(); }
-    }
-];
-
 var connected = false;
-prompt = inquirer.prompt( questions, function( answers ) {
-    var capability = [];
-    __MY_IP__ = answers.ipSource;
 
-    // Initialize available primitives from the registry
-    mplane.Element.initialize_registry("registry.json");
+// CLI params
+cli.parse({
+    ip:['i' , 'IP Address' , 'string' , configuration.main.ipAdresses[0]]
+});
 
-    var pingerCapability = new mplane.Capability();
-    pingerCapability.set_when("now ... future / 1s");
-    pingerCapability.add_parameter({
-        type:"destination.ip4",
-        constraints:configuration.pinger.constraints
-    }).add_parameter({
-        type:"number",
-        constraints:"1 ... 10"
-    }).add_parameter({
-            type:"source.ip4",
-            constraints:__MY_IP__
-    }).add_result_column("delay.twoway")
-        .set_metadata_value("System_type","Pinger")
-        .set_metadata_value("System_version","0.1a")
-        .set_metadata_value("System_ID","Lab test machine").update_token();
-    pingerCapability.set_label(configuration.main.pingerLabel);
+var __MY_IP__ = cli.options.ip;
 
-    var traceCapability = new mplane.Capability();
-    traceCapability.set_when("now ... future / 1s");
-    traceCapability.add_parameter({
-        type:"destination.ip4",
-        constraints:configuration.traceroute.constraints
-    }).add_parameter({
+//prompt = inquirer.prompt( questions, function( answers ) {
+var capability = [];
+//__MY_IP__ = answers.ipSource;
+
+// Initialize available primitives from the registry
+mplane.Element.initialize_registry("registry.json");
+
+var pingerCapability = new mplane.Capability();
+pingerCapability.set_when("now ... future / 1s");
+pingerCapability.add_parameter({
+    type:"destination.ip4",
+    constraints:configuration.pinger.constraints
+}).add_parameter({
+    type:"number",
+    constraints:"1 ... 10"
+}).add_parameter({
         type:"source.ip4",
         constraints:__MY_IP__
-    }).add_result_column("delay.twoway").add_result_column("hops.ip")
-        .set_metadata_value("System_type","Tracer")
-        .set_metadata_value("System_version","0.1a")
-        .set_metadata_value("System_ID","Lab test machine").update_token();
-    traceCapability.set_label(configuration.main.tracerouteLabel);
+}).add_result_column("delay.twoway")
+    .set_metadata_value("System_type","Pinger")
+    .set_metadata_value("System_version","0.1a")
+    .set_metadata_value("System_ID","Lab test machine").update_token();
+pingerCapability.set_label(configuration.main.pingerLabel);
 
-    capability.push(pingerCapability , traceCapability);
+var traceCapability = new mplane.Capability();
+traceCapability.set_when("now ... future / 1s");
+traceCapability.add_parameter({
+    type:"destination.ip4",
+    constraints:configuration.traceroute.constraints
+}).add_parameter({
+    type:"source.ip4",
+    constraints:__MY_IP__
+}).add_result_column("delay.twoway").add_result_column("hops.ip")
+    .set_metadata_value("System_type","Tracer")
+    .set_metadata_value("System_version","0.1a")
+    .set_metadata_value("System_ID","Lab test machine").update_token();
+traceCapability.set_label(configuration.main.tracerouteLabel);
 
-    pushCapPullSpec(capability);
-    var recheck = setInterval(function(){
-        if (!connected){
-            console.log("Supervisor unreachable. Retry in "+configuration.main.retryConnect/1000 + " seconds...");
-            pushCapPullSpec(capability);
-        }else{
-            console.log("------------------------------");
-            console.log("");
-            console.log("Checking for Specifications...");
-            console.log("");
-            console.log("------------------------------");
-            clearInterval(recheck);
-        }
-    } , configuration.main.retryConnect);
-});
+capability.push(pingerCapability , traceCapability);
+
+pushCapPullSpec(capability);
+var recheck = setInterval(function(){
+    if (!connected){
+        console.log("Supervisor unreachable. Retry in "+configuration.main.retryConnect/1000 + " seconds...");
+        pushCapPullSpec(capability);
+    }else{
+        console.log("------------------------------");
+        console.log("");
+        console.log("Checking for Specifications...");
+        console.log("");
+        console.log("------------------------------");
+        clearInterval(recheck);
+    }
+} , configuration.main.retryConnect);
+//});
 
 function pushCapPullSpec(capabilities){
     console.log("***************************");
