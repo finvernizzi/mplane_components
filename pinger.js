@@ -124,7 +124,6 @@ function pushCapPullSpec(capabilities){
                     }
                     ,function(specification , callback){
                         var label = specification.get_label();
-                        console.log("------------------------------------------");
                         // FIXME: this MUST be changed!!!
                         specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
                         if (label ==  configuration.main.pingerLabel){
@@ -166,14 +165,13 @@ function mean(values){
  */
 function execPing(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
-    console.log("... Ping to " +dest);
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
             doAPing(dest, 10000 , reqNum , callback);
         }
     ], function (err, meanRTT) {
-        console.log("CALCULATED:"+meanRTT);
+        console.log("delay.twoway <"+dest+">:"+meanRTT);
         supervisor.registerResult(
             specification
             , {
@@ -189,7 +187,6 @@ function execPing(specification, mainCallback){
                 if (err)
                     console.log(err);
                 else{
-                    console.log("------------------------------------------");
                 }
                 mainCallback()
             }
@@ -203,10 +200,9 @@ function execPing(specification, mainCallback){
  */
 function execTraceroute(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
-   console.log("... Traceroute to " +dest);
     async.waterfall([
         function(callback){
-            console.log("Tracing to "+dest);
+            //console.log("Tracing to "+dest);
             doATrace(dest , function (err,hops) {
                 if (err){
                     callback(err , null);
@@ -216,7 +212,7 @@ function execTraceroute(specification, mainCallback){
             });
         }
     ], function (err, hops) {
-        console.log("DONE");
+        console.log("delay.twoway <"+dest+">:"+mean(hops)+"\n"+"hops.ip <"+dest+">:"+hops.length);
         if (err){
             console.log(err);
         }else{
@@ -236,7 +232,6 @@ function execTraceroute(specification, mainCallback){
                     if (err)
                         console.log(err);
                     else{
-                        console.log("------------------------------------------");
                     }
                     mainCallback();
                 }
