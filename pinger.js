@@ -262,7 +262,7 @@ function doAPing(destination , Wait , requests , callback){
                 }
             });
         });
-        console.log(mean(times))
+        //console.log(mean(times))
         callback(null, mean(times));
     }
     if (error !== null) {
