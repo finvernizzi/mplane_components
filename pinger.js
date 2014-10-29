@@ -245,7 +245,6 @@ function doAPing(destination , Wait , requests , callback){
     else{
         var replies = stdout.split(/\n/);
         _.each(replies , function(row , index){
-            process.stdout.write(". ");
             var vals = row.split(/[\t\s]+/);
             _.each(vals, function(el , index){
                 var element = el.split("=");
@@ -258,7 +257,6 @@ function doAPing(destination , Wait , requests , callback){
                 }
             });
         });
-        //console.log(mean(times))
         callback(null, mean(times));
     }
     if (error !== null) {
