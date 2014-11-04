@@ -431,6 +431,7 @@ function showSupervisorSpecifications(callback){
                 showTitle("NO specifications registered on the supervisor");
                 callback(null, null);
             }else {
+                console.log(specifications)
                 var table = new Table({
                     head: [ 'Registered' , 'Label', 'System type' , 'System' , 'Capability Type' , 'Parameters' , 'Value' ,'Status' ]
                 });

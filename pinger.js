@@ -9,9 +9,8 @@
 var exec = require('child_process').exec,
     mplane = require('mplane')
     ,supervisor = require("mplane_http_transport")
-    , _ = require("lodash")
-    //inquirer = require("inquirer"),
-    ,url = require('url'),
+    , _ = require("lodash"),
+    url = require('url'),
     async = require("async")
     ,fs = require('fs')
     ,cli = require("cli");
@@ -33,16 +32,12 @@ catch (err) {
 
 var __MY_IP__ = "";
 var PLATFORM = "BSD";
+var connected = false;
 
-var questions = [
-    {
-        type: "list",
-        name: "ipSource",
-        message: "Select your source IP address",
-        choices: configuration.main.ipAdresses,
-        filter: function( val ) { return val.toLowerCase(); }
-    }
-];
+// CLI params
+cli.parse({
+    ip:['i' , 'IP Address' , 'string' , configuration.main.ipAdresses[0]]
+});
 
 // CLI params
 cli.parse({
@@ -56,41 +51,42 @@ var connected = false;
     __MY_IP__ = cli.options.sourceIP;
     PLATFORM = cli.options.platform;
 
-    // Initialize available primitives from the registry
-    mplane.Element.initialize_registry("registry.json");
+//prompt = inquirer.prompt( questions, function( answers ) {
+var capability = [];
 
-    var pingerCapability = new mplane.Capability();
-    pingerCapability.set_when("now ... future / 1s");
-    pingerCapability.add_parameter({
-        type:"destination.ip4",
-        constraints:configuration.pinger.constraints
-    }).add_parameter({
-        type:"number",
-        constraints:"1 ... 10"
-    }).add_parameter({
-            type:"source.ip4",
-            constraints:__MY_IP__
-    }).add_result_column("delay.twoway")
-        .set_metadata_value("System_type","Pinger")
-        .set_metadata_value("System_version","0.1a")
-        .set_metadata_value("System_ID","Lab test machine").update_token();
-    pingerCapability.set_label(configuration.main.pingerLabel);
+// Initialize available primitives from the registry
+mplane.Element.initialize_registry("registry.json");
 
-    var traceCapability = new mplane.Capability();
-    traceCapability.set_when("now ... future / 1s");
-    traceCapability.add_parameter({
-        type:"destination.ip4",
-        constraints:configuration.traceroute.constraints
-    }).add_parameter({
+var pingerCapability = new mplane.Capability();
+pingerCapability.set_when("now ... future / 1s");
+pingerCapability.add_parameter({
+    type:"destination.ip4",
+    constraints:configuration.pinger.constraints
+}).add_parameter({
+    type:"number",
+    constraints:"1 ... 10"
+}).add_parameter({
         type:"source.ip4",
         constraints:__MY_IP__
-    }).add_result_column("delay.twoway").add_result_column("hops.ip")
-        .set_metadata_value("System_type","Tracer")
-        .set_metadata_value("System_version","0.1a")
-        .set_metadata_value("System_ID","Lab test machine").update_token();
-    traceCapability.set_label(configuration.main.tracerouteLabel);
+}).add_result_column("delay.twoway")
+    .set_metadata_value("System_type","Pinger")
+    .set_metadata_value("System_version","0.1a")
+    .set_metadata_value("System_ID","Lab test machine").update_token();
+pingerCapability.set_label(configuration.main.pingerLabel);
 
-    capability.push(pingerCapability , traceCapability);
+var traceCapability = new mplane.Capability();
+traceCapability.set_when("now ... future / 1s");
+traceCapability.add_parameter({
+    type:"destination.ip4",
+    constraints:configuration.traceroute.constraints
+}).add_parameter({
+    type:"source.ip4",
+    constraints:__MY_IP__
+}).add_result_column("delay.twoway").add_result_column("hops.ip")
+    .set_metadata_value("System_type","Tracer")
+    .set_metadata_value("System_version","0.1a")
+    .set_metadata_value("System_ID","Lab test machine").update_token();
+traceCapability.set_label(configuration.main.tracerouteLabel);
 
     pushCapPullSpec(capability);
     var recheck = setInterval(function(){
@@ -106,6 +102,23 @@ var connected = false;
             clearInterval(recheck);
         }
     } , configuration.main.retryConnect);
+capability.push(pingerCapability , traceCapability);
+
+pushCapPullSpec(capability);
+var recheck = setInterval(function(){
+    if (!connected){
+        console.log("Supervisor unreachable. Retry in "+configuration.main.retryConnect/1000 + " seconds...");
+        pushCapPullSpec(capability);
+    }else{
+        console.log("------------------------------");
+        console.log("");
+        console.log("Checking for Specifications...");
+        console.log("");
+        console.log("------------------------------");
+        clearInterval(recheck);
+    }
+} , configuration.main.retryConnect);
+>>>>>>> 8c3d472dae3c88aa8f926a987928ed190dc1159f
 //});
 
 function pushCapPullSpec(capabilities){
@@ -129,18 +142,17 @@ function pushCapPullSpec(capabilities){
                         ,caFile: configuration.ssl.ca
                         ,keyFile: configuration.ssl.key
                         ,certFile: configuration.ssl.cert
+                        ,period: configuration.main.ceckSpecificationPeriod
                     }
-                    ,function(specification){
+                    ,function(specification , callback){
                         var label = specification.get_label();
-                        console.log("------------------------------------------");
-                        console.log("So i should work...")
                         // FIXME: this MUST be changed!!!
                         specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
                         if (label ==  configuration.main.pingerLabel){
-                            execPing( specification );
+                            execPing( specification , callback);
                         }
                         if (label ==  configuration.main.tracerouteLabel){
-                            execTraceroute(specification);
+                            execTraceroute(specification, callback);
                         }
                     }, function(err){
                         // For some reason we have no capability registered
@@ -173,7 +185,7 @@ function mean(values){
  *
  * @param specification The mplane Specification
  */
-function execPing(specification){
+function execPing(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
@@ -181,7 +193,7 @@ function execPing(specification){
             doAPing(dest, 5 , reqNum , callback);
         }
     ], function (err, meanRTT) {
-        console.log("CALCULATED:"+meanRTT);
+        console.log("delay.twoway <"+dest+">:"+meanRTT);
         supervisor.registerResult(
             specification
             , {
@@ -197,8 +209,8 @@ function execPing(specification){
                 if (err)
                     console.log(err);
                 else{
-                    console.log("------------------------------------------");
                 }
+                mainCallback()
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -208,11 +220,11 @@ function execPing(specification){
  *
  * @param specification The mplane Specification
  */
-function execTraceroute(specification){
+function execTraceroute(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
     async.waterfall([
         function(callback){
-            console.log("Tracing to "+dest);
+            //console.log("Tracing to "+dest);
             doATrace(dest , function (err,hops) {
                 if (err){
                     callback(err , null);
@@ -222,7 +234,7 @@ function execTraceroute(specification){
             });
         }
     ], function (err, hops) {
-        console.log("DONE");
+        console.log("delay.twoway <"+dest+">:"+mean(hops)+"\n"+"hops.ip <"+dest+">:"+hops.length);
         if (err){
             console.log(err);
         }else{
@@ -242,8 +254,8 @@ function execTraceroute(specification){
                     if (err)
                         console.log(err);
                     else{
-                        console.log("------------------------------------------");
                     }
+                    mainCallback();
                 }
             ); //supervisor.registerResult
         }
@@ -273,7 +285,6 @@ function doAPing(destination , Wait , requests , callback){
     else{
         var replies = stdout.split(/\n/);
         _.each(replies , function(row , index){
-            process.stdout.write(". ");
             var vals = row.split(/[\t\s]+/);
             _.each(vals, function(el , index){
                 var element = el.split("=");
@@ -286,7 +297,6 @@ function doAPing(destination , Wait , requests , callback){
                 }
             });
         });
-        console.log(mean(times))
         callback(null, mean(times));
     }
     if (error !== null) {

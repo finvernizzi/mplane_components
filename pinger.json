@@ -2,9 +2,10 @@
     "main":{
         "logFile":"/var/log/mplane/pinger.log",
         "retryConnect":5000,
+        "ceckSpecificationPeriod":5000,
         "pingerLabel": "pinger_TI_test",
         "tracerouteLabel": "tracer_TI_test",
-        "ipAdresses" : ["169.254.150.91"],
+        "ipAdresses" : ["192.168.123.1"],
         "tracerouteExec": "/usr/sbin/traceroute",
 	"platform":"MAC",
         "_BSD__tracerouteOptions": "-q1 -n -w1 -m5",

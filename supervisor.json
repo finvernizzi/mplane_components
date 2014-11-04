@@ -8,6 +8,8 @@
         "key": "../ca/certs/Supervisor-TI-plaintext.key"
         ,"cert": "../ca/certs/Supervisor-TI.crt"
         ,"ca": [ "../ca/root-ca/root-ca.crt" ]
+        "hostName":"Supervisor-1.TI.mplane.org.",
+        "cli":true
         ,"requestCert" : true
     }
 }
