@@ -9,11 +9,12 @@
 var exec = require('child_process').exec,
     mplane = require('mplane')
     ,supervisor = require("mplane_http_transport")
-    , _ = require("lodash"),
-    inquirer = require("inquirer"),
-    url = require('url'),
+    , _ = require("lodash")
+    //inquirer = require("inquirer"),
+    ,url = require('url'),
     async = require("async")
-    ,fs = require('fs');
+    ,fs = require('fs')
+    ,cli = require("cli");
 
 var CONFIGFILE = "pinger.json"; //TODO:This should be overwrittable by cli
 
@@ -30,7 +31,8 @@ catch (err) {
 }
 //-----------------------------------------------------------------------------------------------------------
 
-var __MY_IP__ = configuration.main.ipAdresses[0];
+var __MY_IP__ = "";
+var PLATFORM = "BSD";
 
 var questions = [
     {
@@ -42,10 +44,17 @@ var questions = [
     }
 ];
 
+// CLI params
+cli.parse({
+    sourceIP:['i' , 'Source IP' , 'string' , configuration.main.ipAdresses[0]],
+    platform:['p' , 'Platform (BSD,MAC,LINUX)' , 'string' , configuration.main.platform]
+});
+
 var connected = false;
-prompt = inquirer.prompt( questions, function( answers ) {
+//prompt = inquirer.prompt( questions, function( answers ) {
     var capability = [];
-    __MY_IP__ = answers.ipSource;
+    __MY_IP__ = cli.options.sourceIP;
+    PLATFORM = cli.options.platform;
 
     // Initialize available primitives from the registry
     mplane.Element.initialize_registry("registry.json");
@@ -97,7 +106,7 @@ prompt = inquirer.prompt( questions, function( answers ) {
             clearInterval(recheck);
         }
     } , configuration.main.retryConnect);
-});
+//});
 
 function pushCapPullSpec(capabilities){
     console.log("***************************");
@@ -169,7 +178,7 @@ function execPing(specification){
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
-            doAPing(dest, 4 , reqNum , callback);
+            doAPing(dest, 5 , reqNum , callback);
         }
     ], function (err, meanRTT) {
         console.log("CALCULATED:"+meanRTT);
@@ -242,7 +251,21 @@ function execTraceroute(specification){
 }
 
 function doAPing(destination , Wait , requests , callback){
- exec("ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from",
+    var pingCMD = "";
+    switch (PLATFORM){
+        case "BSD":
+            pingCMD = "ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from";
+            break;
+        case "MAC":
+            pingCMD = "ping -S " + __MY_IP__ + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
+            break;
+        default:
+            throw (new Error("Unsupported platform "+PLATFORM));
+
+    }
+    console.log(pingCMD)
+ //exec("ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from",
+ exec(pingCMD,
   function (error, stdout, stderr) {
       var times = [];
     if (!stdout)

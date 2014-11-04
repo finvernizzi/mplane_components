@@ -4,24 +4,26 @@
         "retryConnect":5000,
         "pingerLabel": "pinger_TI_test",
         "tracerouteLabel": "tracer_TI_test",
-        "ipAdresses" : ["192.168.0.1"],
+        "ipAdresses" : ["169.254.150.91"],
         "tracerouteExec": "/usr/sbin/traceroute",
-        "tracerouteOptions": "-q1 -n -w1 -m5"
+	"platform":"MAC",
+        "_BSD__tracerouteOptions": "-q1 -n -w1 -m5",
+        "tracerouteOptions": "-n -i 1 -c 5"
     },
     "supervisor":{
-        "host": "mplane.org",
+        "host": "Supervisor-1.TI.mplane.org",
         "port": 2427
     },
     "pinger":{
-        "constraints":"192.168.0.1 ... 192.168.255.255"
+        "constraints":"0.0.0.0 ... 255.255.255.255"
     },
     "traceroute":{
-        "constraints":"192.168.0.1 ... 192.168.255.255"
+        "constraints":"0.0.0.0 ... 255.255.255.255"
     },
     "ssl":{
-        "key": "/usr/script/DATIProxy/ssl/official/Component1/Component-1-plaintext.key"
-        ,"cert": "/usr/script/DATIProxy/ssl/official/Component1/Component-1.crt.pem"
-        ,"ca": [ "/usr/script/DATIProxy/ssl/official/root-ca.pem" , "/usr/script/DATIProxy/ssl/official/signing-ca.pem" ]
+	"key": "../ca/certs/Component-TI-plaintext.key"
+        ,"cert": "../ca/certs/Component-TI.crt"
+        ,"ca": [ "../ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     }
 }
