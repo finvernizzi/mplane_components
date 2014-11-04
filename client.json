@@ -15,15 +15,9 @@
         "file":"./registry.json"
     },
     "ssl":{
-<<<<<<< HEAD
 	"key": "../ca/certs/Client-TI-plaintext.key"
         ,"cert": "../ca/certs/Client-TI.crt"
         ,"ca": [ "../ca/root-ca/root-ca.crt" ]
-=======
-        "key": "/usr/script/ca/certs/Client-TI-plaintext.key"
-        ,"cert": "/usr/script/ca/certs/Client-TI.crt"
-        ,"ca": [ "/usr/script/ca/root-ca/root-ca.crt" ]
->>>>>>> 8c3d472dae3c88aa8f926a987928ed190dc1159f
         ,"requestCert" : true
     }
 }
