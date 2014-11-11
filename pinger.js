@@ -60,6 +60,8 @@ pingerCapability.add_parameter({
     .set_metadata_value("System_ID","Lab test machine").update_token();
 pingerCapability.set_label(configuration.main.pingerLabel);
 
+capability.push(pingerCapability);
+
 var traceCapability = new mplane.Capability();
 traceCapability.set_when("now ... future / 1s");
 traceCapability.add_parameter({
@@ -73,6 +75,7 @@ traceCapability.add_parameter({
     .set_metadata_value("System_version","0.1a")
     .set_metadata_value("System_ID","Lab test machine").update_token();
 traceCapability.set_label(configuration.main.tracerouteLabel);
+capability.push(traceCapability);
 
 pushCapPullSpec(capability);
 var recheck = setInterval(function(){
@@ -103,6 +106,7 @@ function pushCapPullSpec(capabilities){
             if (err){
                 return false;
             }else{
+                connected = true;
                 supervisor.checkSpecifications(
                     {
                         host: configuration.supervisor.host
@@ -131,7 +135,6 @@ function pushCapPullSpec(capabilities){
                             console.log(err);
                     }
                 );
-                connected = true;
                 return true;
             }
         }
