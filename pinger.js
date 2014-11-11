@@ -30,13 +30,6 @@ catch (err) {
 }
 //-----------------------------------------------------------------------------------------------------------
 
-var __MY_IP__ = "";
-var PLATFORM = "BSD";
-
-// CLI params
-cli.parse({
-    ip:['i' , 'IP Address' , 'string' , configuration.main.ipAdresses[0]]
-});
 
 // CLI params
 cli.parse({
@@ -45,12 +38,6 @@ cli.parse({
 });
 
 var connected = false;
-//prompt = inquirer.prompt( questions, function( answers ) {
-    var capability = [];
-    __MY_IP__ = cli.options.sourceIP;
-    PLATFORM = cli.options.platform;
-
-//prompt = inquirer.prompt( questions, function( answers ) {
 var capability = [];
 
 // Initialize available primitives from the registry
@@ -66,7 +53,7 @@ pingerCapability.add_parameter({
     constraints:"1 ... 10"
 }).add_parameter({
         type:"source.ip4",
-        constraints:__MY_IP__
+        constraints:cli.options.sourceIP
 }).add_result_column("delay.twoway")
     .set_metadata_value("System_type","Pinger")
     .set_metadata_value("System_version","0.1a")
@@ -80,7 +67,7 @@ traceCapability.add_parameter({
     constraints:configuration.traceroute.constraints
 }).add_parameter({
     type:"source.ip4",
-    constraints:__MY_IP__
+    constraints:cli.options.sourceIP
 }).add_result_column("delay.twoway").add_result_column("hops.ip")
     .set_metadata_value("System_type","Tracer")
     .set_metadata_value("System_version","0.1a")
@@ -191,7 +178,7 @@ function execPing(specification, mainCallback){
                     console.log(err);
                 else{
                 }
-                mainCallback()
+                //mainCallback()
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -245,15 +232,15 @@ function execTraceroute(specification, mainCallback){
 
 function doAPing(destination , Wait , requests , callback){
     var pingCMD = "";
-    switch (PLATFORM){
+    switch (cli.options.platform){
         case "BSD":
-            pingCMD = "ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from";
+            pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from";
             break;
         case "MAC":
-            pingCMD = "ping -S " + __MY_IP__ + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
+            pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
             break;
         default:
-            throw (new Error("Unsupported platform "+PLATFORM));
+            throw (new Error("Unsupported platform "+cli.options.platform));
 
     }
  exec(pingCMD,
@@ -285,7 +272,7 @@ function doAPing(destination , Wait , requests , callback){
 }
 
 function doATrace(destination , callback){
-    exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + __MY_IP__ + " " + destination,
+    exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + cli.options.sourceIP + " " + destination,
         function (error, stdout, stderr) {
             var delays = [];
             if (error || !stdout){
