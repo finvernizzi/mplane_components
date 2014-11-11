@@ -202,7 +202,6 @@ function execTraceroute(specification, mainCallback){
             });
         }
     ], function (err, hops) {
-        console.log("delay.twoway <"+dest+">:"+mean(hops)+"\n"+"hops.ip <"+dest+">:"+hops.length);
         if (err){
             console.log(err);
         }else{
