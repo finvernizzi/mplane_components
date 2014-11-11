@@ -32,7 +32,6 @@ catch (err) {
 
 var __MY_IP__ = "";
 var PLATFORM = "BSD";
-var connected = false;
 
 // CLI params
 cli.parse({
@@ -87,22 +86,6 @@ traceCapability.add_parameter({
     .set_metadata_value("System_version","0.1a")
     .set_metadata_value("System_ID","Lab test machine").update_token();
 traceCapability.set_label(configuration.main.tracerouteLabel);
-
-    pushCapPullSpec(capability);
-    var recheck = setInterval(function(){
-        if (!connected){
-            console.log("Supervisor unreachable. Retry in "+configuration.main.retryConnect/1000 + " seconds...");
-            pushCapPullSpec(capability);
-        }else{
-            console.log("------------------------------");
-            console.log("");
-            console.log("Checking for Specifications...");
-            console.log("");
-            console.log("------------------------------");
-            clearInterval(recheck);
-        }
-    } , configuration.main.retryConnect);
-capability.push(pingerCapability , traceCapability);
 
 pushCapPullSpec(capability);
 var recheck = setInterval(function(){
