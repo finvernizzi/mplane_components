@@ -118,8 +118,6 @@ var recheck = setInterval(function(){
         clearInterval(recheck);
     }
 } , configuration.main.retryConnect);
->>>>>>> 8c3d472dae3c88aa8f926a987928ed190dc1159f
-//});
 
 function pushCapPullSpec(capabilities){
     console.log("***************************");
@@ -275,8 +273,6 @@ function doAPing(destination , Wait , requests , callback){
             throw (new Error("Unsupported platform "+PLATFORM));
 
     }
-    console.log(pingCMD)
- //exec("ping -S " + __MY_IP__ + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from",
  exec(pingCMD,
   function (error, stdout, stderr) {
       var times = [];
