@@ -34,7 +34,8 @@ catch (err) {
 // CLI params
 cli.parse({
     sourceIP:['i' , 'Source IP' , 'string' , configuration.main.ipAdresses[0]],
-    platform:['p' , 'Platform (BSD,MAC,LINUX)' , 'string' , configuration.main.platform]
+    platform:['p' , 'Platform (BSD,MAC,LINUX)' , 'string' , configuration.main.platform],
+    systemID:['s' , 'System identification' , 'string' , configuration.main.systemID]
 });
 
 var connected = false;
@@ -57,7 +58,7 @@ pingerCapability.add_parameter({
 }).add_result_column("delay.twoway")
     .set_metadata_value("System_type","Pinger")
     .set_metadata_value("System_version","0.1a")
-    .set_metadata_value("System_ID","Lab test machine").update_token();
+    .set_metadata_value("System_ID",cli.options.systemID).update_token();
 pingerCapability.set_label(configuration.main.pingerLabel);
 
 capability.push(pingerCapability);
@@ -73,7 +74,7 @@ traceCapability.add_parameter({
 }).add_result_column("delay.twoway").add_result_column("hops.ip")
     .set_metadata_value("System_type","Tracer")
     .set_metadata_value("System_version","0.1a")
-    .set_metadata_value("System_ID","Lab test machine").update_token();
+    .set_metadata_value("System_ID",cli.options.systemID).update_token();
 traceCapability.set_label(configuration.main.tracerouteLabel);
 capability.push(traceCapability);
 

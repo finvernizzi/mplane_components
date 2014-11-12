@@ -5,11 +5,12 @@
         "ceckSpecificationPeriod":5000,
         "pingerLabel": "pinger_TI_test",
         "tracerouteLabel": "tracer_TI_test",
-        "ipAdresses" : ["192.168.123.1"],
+        "ipAdresses" : ["192.168.123.68"],
         "tracerouteExec": "/usr/sbin/traceroute",
-	"platform":"MAC",
+	    "platform":"MAC",
         "_BSD__tracerouteOptions": "-q1 -n -w1 -m5",
-        "tracerouteOptions": "-n -i 1 -c 5"
+        "tracerouteOptions": "-n -i 1 -c 5",
+        "systemID":"Lab test System"
     },
     "supervisor":{
         "host": "Supervisor-1.TI.mplane.org",
@@ -22,8 +23,8 @@
         "constraints":"0.0.0.0 ... 255.255.255.255"
     },
     "ssl":{
-	"key": "../ca/certs/Component-TI-plaintext.key"
-        ,"cert": "../ca/certs/Component-TI.crt"
+	"key": "../ca/certs/Component-SSB-plaintext.key"
+        ,"cert": "../ca/certs/Component-SSB.crt"
         ,"ca": [ "../ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     }
