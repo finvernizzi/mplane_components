@@ -161,7 +161,7 @@ function execPing(specification, mainCallback){
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
-            doAPing(dest, 5 , reqNum , callback);
+            doAPing(dest, 5000 , reqNum , callback);
         }
     ], function (err, meanRTT) {
         console.log("delay.twoway <"+dest+">:"+meanRTT);
