@@ -178,10 +178,10 @@ function execPing(specification, mainCallback){
             }
             ,function(err , data){
                 if (err)
-                    console.log(err);
+                    mainCallback(err);
                 else{
+                    mainCallback();
                 }
-                //mainCallback()
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -222,10 +222,10 @@ function execTraceroute(specification, mainCallback){
                 }
                 ,function(err , data){
                     if (err)
-                        console.log(err);
+                        mainCallback(err);
                     else{
+                        mainCallback();
                     }
-                    mainCallback();
                 }
             ); //supervisor.registerResult
         }
