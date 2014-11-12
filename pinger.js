@@ -35,7 +35,8 @@ catch (err) {
 cli.parse({
     sourceIP:['i' , 'Source IP' , 'string' , configuration.main.ipAdresses[0]],
     platform:['p' , 'Platform (BSD,MAC,LINUX)' , 'string' , configuration.main.platform],
-    systemID:['s' , 'System identification' , 'string' , configuration.main.systemID]
+    systemID:['s' , 'System identification' , 'string' , configuration.main.systemID],
+    label:['l' , 'System label' , 'string' , configuration.main.label]
 });
 
 var connected = false;
@@ -243,6 +244,9 @@ function doAPing(destination , Wait , requests , callback){
             break;
         case "MAC":
             pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
+        case "LINUX":
+            // In this case the source address is the interface name
+            pingCMD = "ping -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
             break;
         default:
             throw (new Error("Unsupported platform "+cli.options.platform));
