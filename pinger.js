@@ -61,7 +61,6 @@ pingerCapability.add_parameter({
     .set_metadata_value("System_version","0.1a")
     .set_metadata_value("System_ID",cli.options.systemID).update_token();
 pingerCapability.set_label(configuration.main.pingerLabel);
-
 capability.push(pingerCapability);
 
 var traceCapability = new mplane.Capability();
@@ -163,7 +162,7 @@ function execPing(specification, mainCallback){
     var reqNum = specification.get_parameter_value("number");
     async.waterfall([
         function(callback){
-            doAPing(dest, 5000 , reqNum , callback);
+            doAPing(dest, 5 , reqNum , callback);
         }
     ], function (err, meanRTT) {
         console.log("delay.twoway <"+dest+">:"+meanRTT);
@@ -245,7 +244,6 @@ function doAPing(destination , Wait , requests , callback){
         case "MAC":
             pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
         case "LINUX":
-            // In this case the source address is the interface name
             pingCMD = "ping -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
             break;
         default:
