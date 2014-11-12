@@ -239,12 +239,12 @@ function doAPing(destination , Wait , requests , callback){
     var pingCMD = "";
     switch (cli.options.platform){
         case "BSD":
-            pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from";
+            pingCMD = "ping -n -S " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep from";
             break;
         case "MAC":
-            pingCMD = "ping -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
+            pingCMD = "ping -n -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
         case "LINUX":
-            pingCMD = "ping -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
+            pingCMD = "ping -n -A -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
             break;
         default:
             throw (new Error("Unsupported platform "+cli.options.platform));
