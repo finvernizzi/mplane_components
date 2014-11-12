@@ -263,7 +263,8 @@ function doAPing(destination , Wait , requests , callback){
                 var element = el.split("=");
                 switch(element[0]){
                     case "time":
-                        times.push(element[1]);
+                        if (_.isNumber(element[1]) && !_.isNaN(element[1]))
+                            times.push(element[1]);
                         break;
                     default:
                         // nothing to do here
