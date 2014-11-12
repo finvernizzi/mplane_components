@@ -177,11 +177,12 @@ function execPing(specification, mainCallback){
                 "delay.twoway":meanRTT
             }
             ,function(err , data){
-                if (err)
+                mainCallback();
+                /*if (err)
                     mainCallback(err);
                 else{
                     mainCallback();
-                }
+                }*/
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -221,11 +222,12 @@ function execTraceroute(specification, mainCallback){
                     "hops.ip":hops.length
                 }
                 ,function(err , data){
-                    if (err)
+                    mainCallback();
+                    /*if (err)
                         mainCallback(err);
                     else{
                         mainCallback();
-                    }
+                    }*/
                 }
             ); //supervisor.registerResult
         }
