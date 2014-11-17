@@ -125,6 +125,7 @@ function pushCapPullSpec(capabilities){
                             execPing( specification , callback);
                         }
                         if (label ==  configuration.main.tracerouteLabel){
+                            //execPing( specification , callback);
                             execTraceroute(specification, callback);
                         }
                     }, function(err){
@@ -295,9 +296,11 @@ function doATrace(destination , callback){
                     console.log(vals)
                     // Simple and stupid check...
                     vals.forEach(function(val  , index){
-                        if(val == "ms")
+                        if(val == "ms"){
                             console.log(vals[index -1]);
                             delays.push(vals[index -1]);
+                        }
+
                     });
                     //if (vals[(vals.length) -1] == 'ms')
 
