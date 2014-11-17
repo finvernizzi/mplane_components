@@ -8,8 +8,7 @@
         "ipAdresses" : ["192.168.123.68"],
         "tracerouteExec": "/usr/sbin/traceroute",
 	    "platform":"MAC",
-        "_BSD__tracerouteOptions": "-q1 -n -w1 -m5",
-        "tracerouteOptions": "-n -i 1 -c 5",
+        "tracerouteOptions": "-n",
         "systemID":"Lab test System"
     },
     "supervisor":{
