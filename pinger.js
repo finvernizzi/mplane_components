@@ -284,8 +284,9 @@ function doATrace(destination , callback){
         function (error, stdout, stderr) {
             var delays = [];
             if (error || !stdout){
-                callback(new Error("No answer" , null));
-                return;
+                //callback(new Error("No answer" , null));
+                console.log("No answer")
+                //return;
             }
             else{
                 var rows = stdout.split(/\n/);
@@ -297,8 +298,8 @@ function doATrace(destination , callback){
                 });
                 callback(null, delays);
             }
-            if (error !== null) {
+            /*if (error !== null) {
                 callback(error , null);
-            }
+            }*/
         });
 }
