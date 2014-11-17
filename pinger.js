@@ -292,9 +292,15 @@ function doATrace(destination , callback){
                 var rows = stdout.split(/\n/);
                 _.each(rows , function(row , index){
                     var vals = row.split(/[\t\s]+/);
+                    console.log(vals)
                     // Simple and stupid check...
-                    if (vals[(vals.length) -1] == 'ms')
-                        delays.push(vals[(vals.length) -2]);
+                    vals.forEach(function(val  , index){
+                        if(val == "ms")
+                            console.log(vals[index -1]);
+                            delays.push(vals[index -1]);
+                    });
+                    //if (vals[(vals.length) -1] == 'ms')
+
                 });
                 callback(null, delays);
             }
