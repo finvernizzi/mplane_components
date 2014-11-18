@@ -245,7 +245,7 @@ function doAPing(destination , Wait , requests , callback){
         case "MAC":
             pingCMD = "ping -n -S " + cli.options.sourceIP + "  -W "+ Wait*100  +" -c " + requests + " " + destination  + " | grep time";
         case "LINUX":
-            pingCMD = "ping -n -A -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
+            pingCMD = "ping -n -I " + cli.options.sourceIP + "  -W "+ Wait  +" -c " + requests + " " + destination  + " | grep time";
             break;
         default:
             throw (new Error("Unsupported platform "+cli.options.platform));
