@@ -3,13 +3,13 @@
         "logFile":"/var/log/mplane/pinger.log",
         "retryConnect":5000,
         "ceckSpecificationPeriod":5000,
-        "pingerLabel": "pinger_TI_test",
-        "tracerouteLabel": "tracer_TI_test",
-        "ipAdresses" : ["192.168.123.68"],
+        "pingerLabel": "pinger_SSB",
+        "tracerouteLabel": "tracer_SSB",
+        "ipAdresses" : ["192.168.123.129"],
         "tracerouteExec": "/usr/sbin/traceroute",
-	    "platform":"MAC",
-        "tracerouteOptions": "-n",
-        "systemID":"Lab test System"
+	"platform":"LINUX",
+        "tracerouteOptions": "-n -i 1 -c 5",
+        "systemID":"WI-FI router"
     },
     "supervisor":{
         "host": "Supervisor-1.TI.mplane.org",
