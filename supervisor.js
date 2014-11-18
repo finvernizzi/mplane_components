@@ -54,9 +54,9 @@ app.use(morgan("combined" ,{ "stream":fs.createWriteStream(configuration.main.lo
 var httpsServer = https.createServer(ssl_options, app);
 
 httpsServer.on("clientError" , function(exception, securePair){
-    console.log(exception);
+    //console.log(exception);
     console.log("--- ------- ---");
-    console.log(securePair);
+    //console.log(securePair);
     console.log("--- clientError ---");
 });
 
@@ -218,7 +218,6 @@ app.get(supervisor.SUPERVISOR_PATH_SHOW_SPECIFICATION, function(req, res){
         , statusCode = 200
         ,DNs = [];//Here we put all the DNs for filtering specifications from
     var dn = DN(req);
-    console.log(":::"+DN)
 	if (dn) {
         // If the dn has at least a registered capability, send only its specifications, else ALL specifications
         if (__registered_DN__.indexOf(dn) != -1){
