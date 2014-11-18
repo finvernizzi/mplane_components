@@ -281,6 +281,7 @@ function doAPing(destination , Wait , requests , callback){
 }
 
 function doATrace(destination , callback){
+    console.log("TRACE!!!")
     exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + cli.options.sourceIP + " " + destination,
         function (error, stdout, stderr) {
             var delays = [];
