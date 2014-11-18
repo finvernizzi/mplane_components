@@ -285,9 +285,8 @@ function doATrace(destination , callback){
         function (error, stdout, stderr) {
             var delays = [];
             if (error || !stdout){
-                //callback(new Error("No answer" , null));
-                console.log("No answer")
-                //return;
+                callback(null , null);
+                console.log("No answer");
             }
             else{
                 var rows = stdout.split(/\n/);
@@ -300,13 +299,9 @@ function doATrace(destination , callback){
                         }
 
                     });
-                    //if (vals[(vals.length) -1] == 'ms')
 
                 });
                 callback(null, delays);
             }
-            /*if (error !== null) {
-                callback(error , null);
-            }*/
         });
 }
