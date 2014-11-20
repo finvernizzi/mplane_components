@@ -161,7 +161,7 @@ function mean(values){
 function execPing(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
     var reqNum = specification.get_parameter_value("number");
-    cli.info("Something to do for me...("+dest+","+reqNum+"));
+    cli.info("Something to do for me...("+dest+","+reqNum+")");
     async.waterfall([
         function(callback){
             doAPing(dest, 5 , reqNum , callback);
