@@ -30,7 +30,8 @@ catch (err) {
 }
 //-----------------------------------------------------------------------------------------------------------
 
-// Load the reference registry
+// Load the reference registr
+console.log(configuration);
 mplane.Element.initialize_registry(configuration.registry.file);
 
 // This will held the prompt msg

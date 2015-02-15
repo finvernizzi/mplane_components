@@ -1,0 +1,589 @@
+***************************
+REGISTERING MY CAPABILITIES
+***************************
+
+------------------------------
+
+Checking for Specifications...
+
+------------------------------
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.70>:0.7412
+delay.twoway <192.168.123.70>:1.1602000000000001
++
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <173.194.112.127>:NaN
++
+delay.twoway <192.168.123.130>:0.37
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.130>:0.34439999999999993
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.70>:0.8316000000000001
+delay.twoway <192.168.123.130>:0.3566
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.130>:0.33540000000000003
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.65>:0.3358
+delay.twoway <192.168.123.130>:0.3302
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.130>:0.3452
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <173.194.112.127>:NaN
++
+delay.twoway <192.168.123.130>:0.3556
+delay.twoway <192.168.123.65>:0.3582000000000001
+delay.twoway <192.168.123.130>:0.39039999999999997
+delay.twoway <192.168.123.130>:0.36639999999999995
+delay.twoway <192.168.123.130>:0.38699999999999996
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.2476
+delay.twoway <192.168.123.130>:0.32620000000000005
+delay.twoway <192.168.123.70>:0.7779999999999999
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.130>:0.37579999999999997
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.130>:0.3006
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <192.168.123.65>:0.3612
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <173.194.112.127>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <173.194.112.127>:NaN
++
+delay.twoway <192.168.123.130>:0.6206
+delay.twoway <173.194.112.127>:NaN
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <173.194.112.1>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.130>:0.311
+delay.twoway <192.168.123.70>:0.6836
++
+delay.twoway <192.168.123.130>:0.3422
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.3458
+delay.twoway <192.168.123.130>:0.32039999999999996
++
+delay.twoway <192.168.123.130>:0.3584
+delay.twoway <173.194.112.1>:NaN
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.130>:0.3384
+delay.twoway <192.168.123.130>:0.3114
+delay.twoway <173.194.112.1>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.130>:0.3508
+delay.twoway <192.168.123.130>:0.35939999999999994
+delay.twoway <192.168.123.70>:0.8656
+delay.twoway <192.168.123.65>:0.37639999999999996
+delay.twoway <192.168.123.65>:0.3928
+delay.twoway <192.168.123.130>:0.35700000000000004
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.3616
+delay.twoway <192.168.123.130>:0.3456
++
+delay.twoway <217.57.160.197>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <173.194.112.127>:NaN
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.130>:0.3618
+delay.twoway <192.168.123.67>:NaN
++
++
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.130>:0.37639999999999996
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.130>:0.35540000000000005
+delay.twoway <173.194.112.127>:NaN
++
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <173.194.112.1>:33.32000000000001
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.130>:0.3136
+delay.twoway <163.162.170.199>:13.039999999999997
++
+delay.twoway <163.162.170.129>:10.386
+delay.twoway <192.168.123.130>:0.2942
+delay.twoway <163.162.170.129>:10.475999999999999
+delay.twoway <192.168.123.130>:0.3436
+delay.twoway <192.168.123.130>:0.2882
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <173.194.112.1>:33.239999999999995
+delay.twoway <192.168.123.130>:0.3316
+delay.twoway <192.168.123.130>:0.3122
+delay.twoway <192.168.123.130>:0.3506
+delay.twoway <192.168.123.130>:0.6614000000000001
+delay.twoway <192.168.123.130>:0.32859999999999995
+delay.twoway <192.168.123.74>:NaN
++
++
++
+delay.twoway <192.168.123.130>:0.36619999999999997
+delay.twoway <192.168.123.130>:0.35679999999999995
++
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <217.57.160.197>:2.744
+delay.twoway <192.168.123.130>:0.3356
++
+delay.twoway <173.194.112.1>:44.84
+delay.twoway <192.168.123.130>:0.33000000000000007
++
+delay.twoway <192.168.123.130>:0.3484
+delay.twoway <192.168.123.130>:0.3664
+delay.twoway <192.168.123.130>:0.3685999999999999
++
+delay.twoway <217.57.160.197>:3.018
+delay.twoway <192.168.123.130>:0.3546
++
+delay.twoway <192.168.123.130>:0.35340000000000005
+delay.twoway <192.168.123.130>:0.3212
+delay.twoway <192.168.123.130>:0.3332
++
+delay.twoway <192.168.123.130>:0.6994
++
+delay.twoway <192.168.123.130>:2.3280000000000003
+delay.twoway <217.57.160.197>:3.086
++
++
+delay.twoway <192.168.123.68>:NaN
++
++
+delay.twoway <192.168.123.69>:NaN
++
+delay.twoway <173.194.112.127>:47.4
+delay.twoway <192.168.123.70>:0.6776
+delay.twoway <192.168.123.130>:0.35440000000000005
++
+delay.twoway <192.168.123.130>:0.3606
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.130>:0.3572
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <173.194.112.127>:37.160000000000004
+delay.twoway <192.168.123.130>:0.34759999999999996
+delay.twoway <192.168.123.65>:0.358
+delay.twoway <192.168.123.130>:0.3403999999999999
+delay.twoway <192.168.123.130>:0.3618
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.130>:0.362
+delay.twoway <192.168.123.130>:0.35660000000000003
+delay.twoway <173.194.112.1>:34.279999999999994
++
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.130>:0.3634
+delay.twoway <163.162.170.129>:11.040000000000001
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.130>:0.36419999999999997
+delay.twoway <173.194.112.127>:40.86
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.65>:0.34040000000000004
+delay.twoway <217.57.160.197>:2.746
+delay.twoway <192.168.123.130>:0.3196
+delay.twoway <173.194.112.1>:35.7
+delay.twoway <163.162.170.199>:14.560000000000002
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.68>:NaN
++
++
+delay.twoway <192.168.123.130>:0.33840000000000003
+delay.twoway <192.168.123.130>:0.37439999999999996
+delay.twoway <173.194.112.127>:34.82
+delay.twoway <192.168.123.70>:0.7989999999999999
+delay.twoway <192.168.123.130>:0.36160000000000003
+delay.twoway <192.168.123.130>:0.3396
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <163.162.170.129>:10.848
++
+delay.twoway <192.168.123.130>:0.3392
+delay.twoway <192.168.123.65>:0.33039999999999997
+delay.twoway <192.168.123.130>:0.3526
+delay.twoway <192.168.123.130>:0.35219999999999996
+delay.twoway <192.168.123.130>:0.3534
+delay.twoway <192.168.123.130>:0.37
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <217.57.160.197>:2.63
+delay.twoway <192.168.123.130>:0.32700000000000007
+delay.twoway <173.194.112.1>:34.559999999999995
+delay.twoway <192.168.123.68>:NaN
++
++
+delay.twoway <192.168.123.130>:0.3698
+delay.twoway <163.162.170.129>:11.996
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.69>:NaN
++
+delay.twoway <192.168.123.130>:0.3822
+delay.twoway <192.168.123.70>:0.9381999999999999
++
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <173.194.112.127>:35.18000000000001
+delay.twoway <192.168.123.130>:0.37860000000000005
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <163.162.170.199>:255.8
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.130>:0.37079999999999996
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.130>:0.3742
+delay.twoway <192.168.123.69>:NaN
++
++
+delay.twoway <173.194.112.1>:33.92
+delay.twoway <192.168.123.130>:0.3204
+delay.twoway <192.168.123.70>:0.8138
+delay.twoway <173.194.112.127>:35.67999999999999
+delay.twoway <192.168.123.130>:0.3746
++
+delay.twoway <192.168.123.130>:0.34040000000000004
+delay.twoway <163.162.170.199>:251.8
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <217.57.160.197>:3.6380000000000003
+delay.twoway <192.168.123.68>:NaN
++
+delay.twoway <192.168.123.65>:0.3136
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.130>:0.337
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.67>:NaN
++
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <173.194.112.1>:33.040000000000006
+delay.twoway <192.168.123.130>:0.3782
++
+delay.twoway <163.162.170.129>:1615.6
++
+delay.twoway <192.168.123.73>:NaN
++
++
+delay.twoway <217.57.160.197>:3.132
++
++
++
++
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <192.168.123.72>:NaN
++
++
++
++
+delay.twoway <192.168.123.65>:7.541000000000001
++
++
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <163.162.170.199>:780.2
+delay.twoway <192.168.123.68>:NaN
++
++
++
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.70>:0.6841999999999999
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <173.194.112.127>:34.94
+delay.twoway <192.168.123.68>:NaN
++
++
+delay.twoway <163.162.170.129>:1467
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.70>:0.7912
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.36419999999999997
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <192.168.123.65>:0.3392
+delay.twoway <192.168.123.130>:0.31100000000000005
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.130>:0.3326
+delay.twoway <173.194.112.127>:34.82
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.70>:0.7263999999999999
+delay.twoway <173.194.112.127>:38.68
+delay.twoway <173.194.112.1>:38.519999999999996
+delay.twoway <173.194.112.127>:36.459999999999994
+delay.twoway <192.168.123.130>:0.35039999999999993
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.130>:0.37439999999999996
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <217.57.160.197>:2.652
+delay.twoway <192.168.123.130>:0.33059999999999995
+delay.twoway <192.168.123.130>:0.2968
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <192.168.123.130>:0.3268
+delay.twoway <192.168.123.130>:0.3082
+delay.twoway <192.168.123.130>:0.3512
+delay.twoway <192.168.123.130>:0.3644
+delay.twoway <192.168.123.130>:0.3612
+delay.twoway <192.168.123.130>:0.37060000000000004
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.70>:0.7514
+delay.twoway <192.168.123.65>:0.3186
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.67>:NaN
++
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <173.194.112.1>:34.06
+delay.twoway <173.194.112.1>:33.48
+delay.twoway <173.194.112.127>:34.96
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <173.194.112.127>:35.2
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.130>:0.358
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <163.162.170.129>:NaN
++
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.130>:0.3358
+delay.twoway <192.168.123.130>:0.3418
+delay.twoway <217.57.160.197>:3.864
+delay.twoway <192.168.123.65>:0.36360000000000003
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <163.162.170.199>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <217.57.160.197>:2.8720000000000003
+delay.twoway <192.168.123.70>:0.7988000000000001
+delay.twoway <192.168.123.130>:0.39620000000000005
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.67>:NaN
++
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.3128
+delay.twoway <173.194.112.1>:46.88000000000001
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.130>:0.2992
+delay.twoway <192.168.123.130>:0.364
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.130>:0.3228
+delay.twoway <192.168.123.70>:0.9252
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <173.194.112.1>:33.660000000000004
+delay.twoway <173.194.112.127>:34.86
+delay.twoway <192.168.123.130>:0.34199999999999997
+delay.twoway <192.168.123.65>:0.3736
+delay.twoway <192.168.123.130>:0.33799999999999997
+delay.twoway <192.168.123.130>:0.33019999999999994
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.130>:0.3396
+delay.twoway <163.162.170.129>:NaN
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <173.194.112.127>:34.88
+delay.twoway <192.168.123.130>:0.3822
+delay.twoway <192.168.123.130>:0.3742
++
+delay.twoway <192.168.123.130>:0.358
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <163.162.170.199>:NaN
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <163.162.170.129>:NaN
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.70>:0.8725999999999999
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.70>:0.7415999999999999
+delay.twoway <192.168.123.73>:NaN
++
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.65>:0.3684
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <173.194.112.1>:33.7
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <163.162.170.199>:NaN
++
+delay.twoway <192.168.123.69>:NaN
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <217.57.160.197>:3.154
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.70>:0.7444
+delay.twoway <173.194.112.1>:37.12
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.3358
+delay.twoway <192.168.123.130>:0.379
+delay.twoway <173.194.112.127>:41.12
+delay.twoway <163.162.170.129>:44.14
+delay.twoway <163.162.170.129>:14.940000000000001
+delay.twoway <192.168.123.130>:0.3396
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <217.57.160.197>:6.048
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <163.162.170.199>:12.98
+delay.twoway <192.168.123.130>:0.36279999999999996
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <192.168.123.68>:NaN
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.130>:0.3378
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <192.168.123.69>:NaN
++
+delay.twoway <192.168.123.130>:0.37879999999999997
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.70>:0.8066000000000001
+delay.twoway <192.168.123.130>:0.351
+delay.twoway <173.194.112.127>:34
+delay.twoway <192.168.123.74>:NaN
++
+delay.twoway <192.168.123.65>:0.3462
+delay.twoway <192.168.123.130>:0.3372
+delay.twoway <163.162.170.199>:14.319999999999999
+delay.twoway <192.168.123.73>:NaN
+delay.twoway <192.168.123.68>:NaN
++
++
+delay.twoway <192.168.123.67>:NaN
+delay.twoway <192.168.123.130>:0.3482
+delay.twoway <217.57.160.197>:2.9619999999999997
+delay.twoway <173.194.112.1>:33.739999999999995
+delay.twoway <192.168.123.130>:0.3478
+delay.twoway <192.168.123.71>:NaN
+delay.twoway <192.168.123.130>:0.3708
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <173.194.112.127>:35.32
+delay.twoway <192.168.123.65>:0.37859999999999994
+delay.twoway <192.168.123.66>:NaN
++
+delay.twoway <163.162.170.199>:14.080000000000002
+delay.twoway <163.162.170.199>:13.6
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <192.168.123.67>:NaN
++
++
+delay.twoway <192.168.123.130>:0.4010000000000001
++
+delay.twoway <192.168.123.74>:NaN
+delay.twoway <192.168.123.74>:NaN
++
++
+delay.twoway <192.168.123.130>:0.3588
+delay.twoway <173.194.112.127>:37
++
+delay.twoway <192.168.123.130>:0.3528
+delay.twoway <192.168.123.73>:NaN
++
++
+delay.twoway <192.168.123.130>:0.3348
+delay.twoway <192.168.123.130>:0.32199999999999995
+delay.twoway <217.57.160.197>:2.6919999999999997
++
+delay.twoway <163.162.170.199>:55.779999999999994
+delay.twoway <192.168.123.130>:0.3294
++
+delay.twoway <192.168.123.130>:0.343
+delay.twoway <192.168.123.70>:0.7066
++
++
++
+delay.twoway <192.168.123.72>:NaN
+delay.twoway <173.194.112.1>:261
+delay.twoway <192.168.123.69>:NaN
++
+delay.twoway <192.168.123.70>:0.682
+delay.twoway <173.194.112.127>:46.94
+delay.twoway <192.168.123.71>:NaN
++
+delay.twoway <192.168.123.72>:NaN
++
+delay.twoway <192.168.123.66>:NaN
+delay.twoway <173.194.112.1>:53.760000000000005
++
+delay.twoway <192.168.123.73>:NaN
++

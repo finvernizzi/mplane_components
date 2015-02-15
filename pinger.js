@@ -120,12 +120,11 @@ function pushCapPullSpec(capabilities){
                     ,function(specification , callback){
                         var label = specification.get_label();
                         // FIXME: this MUST be changed!!!
-                        specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
-                        if (label ==  configuration.main.pingerLabel){
+                        //specification.set_when("2014-09-29 10:19:26.765203 ... 2014-09-29 10:19:27.767020");
+			if (label ==  configuration.main.pingerLabel){
                             execPing( specification , callback);
                         }
                         if (label ==  configuration.main.tracerouteLabel){
-                            //execPing( specification , callback);
                             execTraceroute(specification, callback);
                         }
                     }, function(err){
@@ -161,6 +160,7 @@ function mean(values){
 function execPing(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
     var reqNum = specification.get_parameter_value("number");
+    var startAction = new Date();
     cli.info("Something to do for me...("+dest+","+reqNum+")");
     async.waterfall([
         function(callback){
@@ -168,6 +168,7 @@ function execPing(specification, mainCallback){
         }
     ], function (err, meanRTT) {
         console.log("delay.twoway <"+dest+">:"+meanRTT);
+	specification.set_when(startAction.toISOString() + " ... " + new Date().toISOString());
         supervisor.registerResult(
             specification
             , {
@@ -181,11 +182,6 @@ function execPing(specification, mainCallback){
             }
             ,function(err , data){
                 mainCallback();
-                /*if (err)
-                    mainCallback(err);
-                else{
-                    mainCallback();
-                }*/
             }
         ); //supervisor.registerResult
     }); //waterfall
@@ -197,9 +193,10 @@ function execPing(specification, mainCallback){
  */
 function execTraceroute(specification, mainCallback){
     var dest = specification.get_parameter_value("destination.ip4");
+    cli.info("Something to do for me...("+dest+")");
+    var startAction = new Date();
     async.waterfall([
         function(callback){
-            //console.log("Tracing to "+dest);
             doATrace(dest , function (err,hops) {
                 if (err){
                     callback(err , null);
@@ -212,6 +209,8 @@ function execTraceroute(specification, mainCallback){
         if (err){
             console.log(err);
         }else{
+    	    cli.info("Something to do for me...("+dest+")");
+	    specification.set_when(startAction.toISOString() + " ... " + new Date().toISOString());
             supervisor.registerResult(
                 specification
                 , {
@@ -225,6 +224,7 @@ function execTraceroute(specification, mainCallback){
                     "hops.ip":hops.length
                 }
                 ,function(err , data){
+    	            cli.info("delay.twoway:"+mean(hops)+" - hops:"+hops.length);
                     mainCallback();
                     /*if (err)
                         mainCallback(err);
@@ -252,6 +252,7 @@ function doAPing(destination , Wait , requests , callback){
             throw (new Error("Unsupported platform "+cli.options.platform));
 
     }
+ try{
  exec(pingCMD,
   function (error, stdout, stderr) {
       var times = [];
@@ -279,10 +280,12 @@ function doAPing(destination , Wait , requests , callback){
       callback(error , null);
     }
   });
+ }catch(e){
+	console.log(e)
+}
 }
 
 function doATrace(destination , callback){
-    cli.debug("TRACE!!!")
     exec(configuration.main.tracerouteExec + " " + configuration.main.tracerouteOptions + " -s " + cli.options.sourceIP + " " + destination,
         function (error, stdout, stderr) {
             var delays = [];

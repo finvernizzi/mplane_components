@@ -8,8 +8,7 @@
         "ipAdresses" : ["192.168.123.4"],
         "tracerouteExec": "/usr/sbin/traceroute",
 	"platform":"LINUX",
-        "__tracerouteOptions": "-n -i 1 -c 5",
-        "tracerouteOptions": "-n ",
+        "tracerouteOptions": "-n -i 1 -c 5",
         "systemID":"Service node"
     },
     "supervisor":{
@@ -23,8 +22,8 @@
         "constraints":"0.0.0.0 ... 255.255.255.255"
     },
     "ssl":{
-	"key": "../ca/certs/Component-SSB-plaintext.key"
-        ,"cert": "../ca/certs/Component-SSB.crt"
+	"key": "../ca/certs/Component-TI-plaintext.key"
+        ,"cert": "../ca/certs/Component-TI.crt"
         ,"ca": [ "../ca/root-ca/root-ca.crt" ]
         ,"requestCert" : true
     },
