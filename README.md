@@ -6,7 +6,7 @@ mplane_components
 
 This package contains working examples of three [mPlane](http://www.ict-mplane.eu/) components: a Supervisor, a probe (ping and traceroute) and a simple client for the supervisor. 
 The implementation leverages mPlane nodej library and mPlane HTTPS transport library.
-A complete set of working SSL certificates is provided (with root-CA and signing-CA) in order to have a complete, full working environment. 
+A complete set of working SSL certificates is provided (with root-CA and signing-CA) [here](https://github.com/stepenta/RI/tree/master/PKI) in order to have a complete, full working environment. 
 For security reasons you SHOULD update these files with your own certificates.
 
 #Installation
@@ -140,3 +140,7 @@ To run the probe:
 ```
 node ./pinger
 ```
+
+##LICENSE
+
+This software is released under the [BSD](http://en.wikipedia.org/wiki/BSD_licenses#2-clause_license_.28.22Simplified_BSD_License.22_or_.22FreeBSD_License.22.29) license.
